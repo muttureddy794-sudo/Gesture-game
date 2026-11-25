@@ -1,0 +1,5 @@
+const V='gr-v2',LOCAL=['./','index.html','manifest.webmanifest','css/style.css','icons/icon-192.png','icons/icon-512.png','js/config.js','js/renderer.js','js/audio.js','js/track.js','js/stage.js','js/car.js','js/input.js','js/physics.js','js/race.js','js/camera.js','js/hud.js','js/ui.js','js/net.js','js/touch.js','js/server-url.js','js/main.js'],THREE='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(async c=>{await c.addAll(LOCAL);try{await c.add(new Request(THREE,{mode:'no-cors'}))}catch{}}));self.skipWaiting()});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!=V).map(x=>caches.delete(x)))));self.clients.claim()});
+self.addEventListener('fetch',e=>{const r=e.request,u=new URL(r.url);if(r.method!='GET'||u.pathname.startsWith('/api/')||u.pathname=='/ws')return;
+ e.respondWith(caches.match(r).then(hit=>{const net=fetch(r).then(res=>{if(res&&(res.ok||res.type=='opaque'))caches.open(V).then(c=>c.put(r,res.clone()));return res}).catch(()=>hit||(r.mode=='navigate'?caches.match('index.html'):Response.error()));return hit||net}))});

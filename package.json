@@ -1,0 +1,1 @@
+{"name":"gesture-racer","version":"2.0.0","private":true,"description":"Gesture-controlled 3D racing game with PWA support and online multiplayer","engines":{"node":">=18"},"scripts":{"start":"node server/server.js","test":"node server/test.js"}}

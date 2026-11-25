@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Gesture Racer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#00e5ff"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="stylesheet" href="css/style.css"></head><body>
+<canvas id="c"></canvas>
+<div id="hud">
+<div class="p" id="lap"></div><div class="p" id="lb"></div>
+<canvas class="p" id="mini" width="160" height="160"></canvas>
+<canvas class="p" id="gauge" width="240" height="170"></canvas>
+<div class="p" id="nit"><i></i></div>
+<div id="fx"></div><div id="tc"></div><div id="cd"></div><div id="cam"></div><div id="camb"></div>
+<div class="p" id="gest"><div><video id="vid" playsinline muted></video><canvas id="hc" width="164" height="123"></canvas></div><span id="gs">Starting camera…</span><br><button class="btn" id="retry" style="display:none;padding:4px 10px;font-size:11px;margin-top:4px">Retry camera</button></div>
+</div>
+<div id="menu">
+<h1>GESTURE RACER</h1>
+<div class="lbl">STAGE</div><div class="row" id="stg"></div>
+<div class="lbl">DIFFICULTY</div><div class="row" id="dif"></div>
+<div class="lbl">CONTROLS</div><div class="row" id="ctl"></div>
+<button class="btn" id="go">START RACE</button><div class="row"><button class="btn" id="mpb">🌐 Multiplayer</button><button class="btn" id="inst" style="display:none">⬇ Install App</button></div>
+<div class="help"><b>Hand:</b> tilt hand left/right to steer · open palm closer to camera = accelerate · fist = brake · pinch thumb+index = nitro<br><b>Keyboard:</b> ←/→ or A/D steer · ↑/W gas · ↓/S brake · Space nitro · C or 1–7 camera · R rain · P pause</div>
+</div>
+<div id="mp" style="display:none"></div><div id="ov"><h1 id="ovT" style="font-size:48px"></h1><div id="ovB"></div><div class="row" id="ovR"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/track.js"></script>
+<script src="js/stage.js"></script>
+<script src="js/car.js"></script>
+<script src="js/input.js"></script>
+<script src="js/physics.js"></script>
+<script src="js/race.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/server-url.js"></script>
+<script src="js/net.js"></script>
+<script src="js/touch.js"></script>
+<script src="js/main.js"></script>
+</body></html>

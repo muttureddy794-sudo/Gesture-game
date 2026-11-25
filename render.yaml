@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: gesture-racer
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    disk: { name: data, mountPath: /data, sizeGB: 1 }
